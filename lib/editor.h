@@ -10,8 +10,14 @@
 #include <signal.h>
 #include <stddef.h>
 #include <ctype.h>
+#include <errno.h>
+
+#define CTRL_KEY(k) ((k) & 0x1f)
 
 void parse(int ac, char *av);
 void error_exit(void);
+void die(const char *s);
+char editorReadKey();
+void keyPress();
 
 #endif
